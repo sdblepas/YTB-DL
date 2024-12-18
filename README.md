@@ -36,13 +36,13 @@ This Python script downloads a YouTube video's highest quality video and audio s
 Run the script from the command line with a YouTube URL as an argument:
 
 ```bash
-python download_video.py [YouTube URL]
+python Youtube_dl.py [YouTube URL]
 ```
 
 ### Example
 
 ```bash
-python download_video.py https://www.youtube.com/watch?v=dQw4w9WgXcQ
+python Youtube_dl.py https://www.youtube.com/watch?v=dQw4w9WgXcQ
 ```
 
 ## Output
