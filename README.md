@@ -45,50 +45,9 @@ Before using YTB-DL, ensure you have the following installed:
 Run the script from the command line with a YouTube URL:
 
 ```bash
-python ytb_dl.py [OPTIONS] URL
+python Youtube_dl.py [OPTIONS] URL
 ```
 
-### Options
-
-- `-f, --format` : Specify the video format (e.g., `best`, `mp4`, `webm`).
-- `-o, --output` : Define the output directory.
-- `-a, --audio-only` : Download only the audio stream.
-- `-p, --playlist` : Download all videos in a playlist.
-
-### Examples
-
-1. **Download the highest quality video**:
-
-   ```bash
-   python ytb_dl.py -f best https://www.youtube.com/watch?v=dQw4w9WgXcQ
-   ```
-
-2. **Download audio only**:
-
-   ```bash
-   python ytb_dl.py -a https://www.youtube.com/watch?v=dQw4w9WgXcQ
-   ```
-
-3. **Download an entire playlist**:
-
-   ```bash
-   python ytb_dl.py -p https://www.youtube.com/playlist?list=PL1234567890abcdef
-   ```
-
-## Output
-
-The downloaded files will be saved in the specified output directory or the current directory if no output is specified. Temporary files used during processing will be automatically cleaned up.
-
-## Troubleshooting
-
-1. **`ffmpeg` not found**:
-   - Ensure `ffmpeg` is installed and added to your system's PATH.
-
-2. **`pytube` errors**:
-   - Update the `pytube` library:
-     ```bash
-     pip install --upgrade pytube
-     ```
 
 ## Contributing
 
