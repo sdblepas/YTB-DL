@@ -1,80 +1,107 @@
 
-# YouTube Video and Audio Downloader
+# YTB-DL
 
-This Python script downloads a YouTube video's highest quality video and audio streams separately and combines them into a single `.mp4` file using `ffmpeg`.
+YTB-DL is a Python-based command-line tool for downloading videos from YouTube and other video platforms. It allows you to download videos in the highest quality or extract audio as needed, with support for combining video and audio using FFmpeg.
 
 ## Features
 
-- Downloads the highest quality video and audio streams.
-- Combines video and audio streams into a single `.mp4` file.
-- Automatically removes temporary files after combining.
-- Simple and easy to use.
+- Download videos in the highest available quality.
+- Extract and download audio from videos.
+- Combine video and audio streams into a single file using FFmpeg.
+- Batch downloading support for playlists.
+- Simple and easy-to-use CLI interface.
 
 ## Prerequisites
 
-### Python Packages
+Before using YTB-DL, ensure you have the following installed:
 
-1. **`pytubefix`**: A fixed version of the `pytube` library to download YouTube videos. Install it via:
-   ```bash
-   pip install pytubefix
-   ```
-
-2. **`ffmpeg`**: Required for combining the video and audio. Ensure it is installed and added to your system's PATH. You can download it from [FFmpeg's official website](https://ffmpeg.org/download.html).
-
-### System Requirements
-
-- Python 3.6+
-- A working internet connection.
+1. **Python 3.6+**:
+   - YTB-DL is built using Python and requires version 3.6 or higher.
+2. **FFmpeg**:
+   - Used for processing video and audio. Install it from [FFmpeg's official website](https://ffmpeg.org/download.html) and ensure it is added to your system's PATH.
 
 ## Installation
 
-1. Clone or download this repository.
-2. Ensure the required Python packages and `ffmpeg` are installed on your system.
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/sdblepas/YTB-DL.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd YTB-DL
+   ```
+
+3. Install the required Python packages:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
-Run the script from the command line with a YouTube URL as an argument:
+Run the script from the command line with a YouTube URL:
 
 ```bash
-python Youtube_dl.py [YouTube URL]
+python ytb_dl.py [OPTIONS] URL
 ```
 
-### Example
+### Options
 
-```bash
-python Youtube_dl.py https://www.youtube.com/watch?v=dQw4w9WgXcQ
-```
+- `-f, --format` : Specify the video format (e.g., `best`, `mp4`, `webm`).
+- `-o, --output` : Define the output directory.
+- `-a, --audio-only` : Download only the audio stream.
+- `-p, --playlist` : Download all videos in a playlist.
+
+### Examples
+
+1. **Download the highest quality video**:
+
+   ```bash
+   python ytb_dl.py -f best https://www.youtube.com/watch?v=dQw4w9WgXcQ
+   ```
+
+2. **Download audio only**:
+
+   ```bash
+   python ytb_dl.py -a https://www.youtube.com/watch?v=dQw4w9WgXcQ
+   ```
+
+3. **Download an entire playlist**:
+
+   ```bash
+   python ytb_dl.py -p https://www.youtube.com/playlist?list=PL1234567890abcdef
+   ```
 
 ## Output
 
-1. The script will create a combined video file in the current working directory with the name based on the YouTube video's title.
-2. Temporary files will be cleaned up after the process completes.
+The downloaded files will be saved in the specified output directory or the current directory if no output is specified. Temporary files used during processing will be automatically cleaned up.
 
-### Error Handling
+## Troubleshooting
 
-If you encounter any errors:
-- Ensure the YouTube URL is valid.
-- Check that `pytubefix` and `ffmpeg` are properly installed.
-- Verify that your internet connection is stable.
+1. **`ffmpeg` not found**:
+   - Ensure `ffmpeg` is installed and added to your system's PATH.
 
-## Notes
+2. **`pytube` errors**:
+   - Update the `pytube` library:
+     ```bash
+     pip install --upgrade pytube
+     ```
 
-- Filenames are sanitized to remove invalid characters.
-- The script overwrites the output file if it already exists.
+## Contributing
+
+Contributions are welcome! If you'd like to improve this project, fork the repository, make your changes, and submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Disclaimer
+
+Downloading videos from YouTube or other platforms may violate their terms of service. Ensure you have the necessary permissions before downloading any content.
 
 ---
 
-### Troubleshooting
-
-- **Issue**: `ffmpeg` not found.
-  - **Solution**: Ensure `ffmpeg` is installed and added to your system's PATH.
-
-- **Issue**: `pytubefix` not working.
-  - **Solution**: Try updating `pytubefix`:
-    ```bash
-    pip install --upgrade pytubefix
-    ```
+Happy downloading!
